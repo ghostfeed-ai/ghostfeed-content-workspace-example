@@ -1,0 +1,17 @@
+.env
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local media assets are intentionally not shipped in this public repo.
+PepIntel/Avatars/**
+PepIntel/Videos/**
+PepIntel/Export/**
+PepIntel/yet to be clonned/**
+
+# Keep only the workspace folder skeleton.
+!PepIntel/Avatars/.gitkeep
+!PepIntel/Videos/.gitkeep
+!PepIntel/Export/.gitkeep
+!PepIntel/yet to be clonned/.gitkeep
+
