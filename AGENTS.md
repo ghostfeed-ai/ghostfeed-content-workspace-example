@@ -95,7 +95,8 @@ For transformation content, prefer:
 - Fat-to-fit visual progression.
 - Clean hard cuts unless the reference uses a different rhythm.
 - No overlay text unless explicitly requested.
-- Ken Burns style zoom/pan on still photos when the video pool is too thin.
+- Ken Burns style zoom/pan on still photos only when the edit is not already using a video generated from that same image/source frame.
+- Do not use a still image and its generated video in the same edit unless the user explicitly asks for that repeated-shot effect.
 
 Before exporting final batches, inspect contact sheets or frame strips for:
 
@@ -116,4 +117,3 @@ Known useful public API flow:
 - Group local files by master avatar name and variant, such as `Leah/Fat` and `Leah/Fit`.
 
 Keep this workspace simple. Add automation only when repeated work proves it is needed.
-
