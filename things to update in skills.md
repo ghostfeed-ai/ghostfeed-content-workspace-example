@@ -15,9 +15,16 @@ Running notes for Ghostfeed skill improvements discovered while using the skills
 
 - User expected a Pinterest search feature to be available through the Ghostfeed API/skill for finding image references.
 - Installed Ghostfeed skills do not document a Pinterest search endpoint or workflow.
+- Live API probe on 2026-06-09 confirmed the route exists:
+  - `POST /api/v1/tools/pinterest/search`
+  - Body: `{ "query": "fat fitness transformation", "limit": 3 }`
+  - Auth: normal public API bearer token plus `X-Workspace-Id`.
+  - Response: `success: true`, `data.query`, `data.limit`, `data.maxLimit`, and `data.images[]` where each item has `{ index, imageUrl }`.
+  - `maxLimit` observed as `50`.
+- `GET /api/v1/tools/pinterest/search` returns 404; this is POST-only.
 - Public docs search only surfaced a Ghostfeed blog workflow mentioning external Apify Pinterest scraping, not a public API route.
-- Probed likely public routes and received 404s: `/api/v1/search/pinterest`, `/api/v1/pinterest/search`, `/api/v1/images/search`, `/api/v1/reference-images/search`.
-- Suggested update: add the real Pinterest search endpoint/workflow to the public skill bundle if it exists, or document that Pinterest search requires an external scraper/tool rather than the Ghostfeed Public API.
+- Other probed routes returned 404s: `/api/v1/search/pinterest`, `/api/v1/pinterest/search`, `/api/v1/reference-images/search`, and `GET /api/v1/tools`.
+- Suggested update: add `POST /api/v1/tools/pinterest/search` to the public skill bundle and document the POST-only method, request body, limit cap, and response shape.
 
 ### Import status endpoint shape after Smart Crop
 
