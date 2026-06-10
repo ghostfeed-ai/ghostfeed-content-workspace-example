@@ -54,3 +54,17 @@ Running notes for Ghostfeed skill improvements discovered while using the skills
 - Corresponding completed videos are visible via `/api/v1/ugc/videos` with `stage: "complete"` and `videoGenerationMode: "kling_2_5_turbo"`.
 - The core skill currently says to poll `GET /api/v1/generations/:generationId` until complete/failed, which is unsafe for these video jobs.
 - Suggested update: for UGC video generation, poll both the generation ledger and `/api/v1/ugc/videos` filtered by `selectedFrameId`, `createdAfter`, or known `videoId` when available. Also update backend generation ledger status when the video stage completes.
+
+### First-frame clone endpoint does not perform avatar replacement
+
+- User selected Pinterest exercise reference images and expected the Ghostfeed first-frame clone flow to create Fit Leah versions of those images.
+- The installed UGC skill documents `POST /api/v1/ugc/first-frames/clone` with `imageUrl`, `avatarId`, and `prompt`, but does not clearly say whether this is an actual image generation step or a reference-frame registration step.
+- Live API responses on 2026-06-10 for squat, hip thrust, and lat pulldown returned successful completed generations, but every output URL exactly matched the original Pinterest `imageUrl`.
+- The returned frame records had `frameGenerationMode: "reference_image"`, `generation.mode: "clone"`, `imageModel: null`, and `generation.outputs[0].url` equal to the source URL. No avatar-replacement image generation appears to have run.
+- Suggested update: clarify that `/first-frames/clone` from external `imageUrl` currently imports/registers the reference as a first frame, even if `avatarId` and `prompt` are provided. If avatar replacement from an arbitrary reference image is supported elsewhere, document the correct endpoint and request body. If it is supposed to happen through this endpoint, the API should run an image model and return a generated Ghostfeed-hosted image rather than the original source URL.
+
+### Public API may block default Python user agent
+
+- A read-only live API probe using Python `urllib` hit Cloudflare Error 1010: `browser_signature_banned`.
+- The same public API key and endpoint worked when called with a browser-style `User-Agent`.
+- Suggested update: document recommended agent/client headers or adjust Cloudflare rules so normal programmatic API clients are not blocked by browser-signature checks.

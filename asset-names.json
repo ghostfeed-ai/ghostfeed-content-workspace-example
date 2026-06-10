@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "description": "Canonical local names for Ghostfeed assets. This file contains metadata only; never put asset URLs, API keys, or media bytes here.",
+  "assets": {}
+}

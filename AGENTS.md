@@ -75,6 +75,8 @@ Good examples:
 
 Avoid UUID-only names in active media folders. If sync scripts download raw generated names, rename the assets after visual review.
 
+Cross-laptop naming is controlled by `asset-names.json`. When a filename or unusable status matters, record the Ghostfeed asset key and canonical filename there instead of relying on an uncommitted local rename. The media file itself remains ignored, but the naming decision is committed.
+
 ## Unusable Assets
 
 Do not delete questionable assets by default. Move them into an `_Unusable` folder inside the same media folder and include the reason in the filename.

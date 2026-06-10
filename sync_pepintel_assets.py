@@ -9,6 +9,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parent
 PEPINTEL = ROOT / "PepIntel"
 API_BASE_URL = os.environ.get("GHOSTFEED_API_BASE_URL", "https://api.ghostfeed.ai")
+ASSET_NAMES = ROOT / "asset-names.json"
 
 
 def load_env():
@@ -30,6 +31,11 @@ def clean_name(value):
     return re.sub(r"\s+", " ", value) or "Unknown"
 
 
+def slugify(value):
+    value = re.sub(r"[^A-Za-z0-9]+", "-", value).strip("-").lower()
+    return re.sub(r"-+", "-", value) or "asset"
+
+
 def split_avatar_name(name):
     clean = clean_name(name)
     words = clean.split()
@@ -49,7 +55,7 @@ def api_get(path, key):
         headers={
             "Authorization": f"Bearer {key}",
             "X-Workspace-Id": workspace_id,
-            "User-Agent": "Codex-Ghostfeed-Assets/1.0",
+            "User-Agent": "Mozilla/5.0 Codex-Ghostfeed-Assets/1.0",
         },
     )
     with urllib.request.urlopen(req, timeout=60) as res:
@@ -59,7 +65,7 @@ def api_get(path, key):
 def download(url, path):
     if path.exists() and path.stat().st_size > 0:
         return
-    req = urllib.request.Request(url, headers={"User-Agent": "Codex-Ghostfeed-Assets/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 Codex-Ghostfeed-Assets/1.0"})
     with urllib.request.urlopen(req, timeout=120) as res:
         path.write_bytes(res.read())
 
@@ -75,7 +81,56 @@ def asset_url(asset):
     return asset.get("imageUrl") or asset.get("url")
 
 
-def sync_avatar_assets(key, avatar):
+def load_asset_names():
+    if not ASSET_NAMES.exists():
+        return {}
+    payload = json.loads(ASSET_NAMES.read_text())
+    return payload.get("assets", {})
+
+
+def stable_asset_id(asset, index):
+    return (
+        asset.get("id")
+        or asset.get("assetId")
+        or asset.get("frameId")
+        or asset.get("videoId")
+        or asset.get("imageId")
+        or asset.get("_id")
+        or f"unknown-{index:04d}"
+    )
+
+
+def asset_key(avatar_id, asset, index):
+    return f"{avatar_id}:{stable_asset_id(asset, index)}"
+
+
+def catalog_entry(catalog, key):
+    entry = catalog.get(key)
+    return entry if isinstance(entry, dict) else {}
+
+
+def default_filename(asset, index, url):
+    asset_type = asset.get("type") or "image"
+    source = slugify(asset.get("source") or "asset")
+    stable_id = slugify(stable_asset_id(asset, index))
+    default_ext = ".mp4" if asset_type == "video" else ".png"
+    return f"{source}-{stable_id}{ext_from_url(url, default_ext)}"
+
+
+def media_dir(base_dir, asset_type, entry):
+    if entry.get("status") == "unusable":
+        folder = "Videos" if asset_type == "video" else "Images"
+        return base_dir / folder / "_Unusable"
+    return base_dir / ("Videos" if asset_type == "video" else "Images")
+
+
+def filename_for_asset(catalog, key, asset, index, url):
+    entry = catalog_entry(catalog, key)
+    filename = entry.get("filename") or default_filename(asset, index, url)
+    return Path(filename).name
+
+
+def sync_avatar_assets(key, avatar, catalog):
     master, variant = split_avatar_name(avatar["name"])
     base_dir = PEPINTEL / "Avatars" / master / variant
     images_dir = base_dir / "Images"
@@ -103,16 +158,13 @@ def sync_avatar_assets(key, avatar):
         if not url:
             continue
         asset_type = asset.get("type") or "image"
-        source = clean_name(asset.get("source") or "asset").replace(" ", "-").lower()
-        asset_id = asset.get("id") or asset.get("assetId") or asset.get("frameId") or asset.get("videoId") or f"{index:04d}"
-        if asset_type == "video":
-            filename = f"{index:04d}-{source}-{asset_id}{ext_from_url(url, '.mp4')}"
-            path = videos_dir / filename
-        else:
-            filename = f"{index:04d}-{source}-{asset_id}{ext_from_url(url, '.png')}"
-            path = images_dir / filename
+        key = asset_key(avatar["avatarId"], asset, index)
+        path = media_dir(base_dir, asset_type, catalog_entry(catalog, key))
+        path.mkdir(parents=True, exist_ok=True)
+        path = path / filename_for_asset(catalog, key, asset, index, url)
         download(url, path)
         downloaded.append({
+            "assetKey": key,
             "type": asset_type,
             "source": asset.get("source"),
             "localPath": str(path.relative_to(ROOT)),
@@ -134,6 +186,7 @@ def main():
     key = os.environ.get("GHOSTFEED_API_KEY")
     if not key:
         raise SystemExit("Missing GHOSTFEED_API_KEY in .env")
+    catalog = load_asset_names()
 
     for folder in ["Avatars", "Videos", "Export"]:
         (PEPINTEL / folder).mkdir(parents=True, exist_ok=True)
@@ -143,7 +196,7 @@ def main():
     manifest = []
     for avatar in avatars:
         print(f"Syncing {avatar['name']}")
-        manifest.append(sync_avatar_assets(key, avatar))
+        manifest.append(sync_avatar_assets(key, avatar, catalog))
 
     (PEPINTEL / "Avatars" / "_manifest.json").write_text(json.dumps(manifest, indent=2))
     print(f"Synced {len(manifest)} avatars")
