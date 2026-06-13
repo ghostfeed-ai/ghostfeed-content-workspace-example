@@ -9,9 +9,18 @@ PepIntel/Videos/**
 PepIntel/Export/**
 PepIntel/yet to be clonned/**
 
+# Research source downloads are local-only and should not be shipped.
+research/**/content/**
+research/**/slideshows/**
+research/**/extractions/**
+research/**/analysis/_intermediate/**
+research/**/*.json
+research/**/*.txt
+
 # Keep only the workspace folder skeleton.
 !PepIntel/Avatars/.gitkeep
 !PepIntel/Videos/.gitkeep
 !PepIntel/Export/.gitkeep
 !PepIntel/yet to be clonned/.gitkeep
-
+!research/**/content/.gitkeep
+!research/**/slideshows/.gitkeep

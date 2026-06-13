@@ -33,19 +33,6 @@ Running notes for Ghostfeed skill improvements discovered while using the skills
 - However, `GET /api/v1/ugc/templates/:templateId/import-status` returned `{ code: "not_found", message: "Template not found" }` for both imported source template ids after completion.
 - Suggested update: clarify whether agents should poll the generation ledger instead of `import-status` for Smart Crop imports, or fix/document the expected `import-status` behavior for `api-import-*` template ids.
 
-### Kling 2.5 Pro naming mismatch
-
-- User asked to use "Kling 2.5 Pro" for prompt-based video generation.
-- Public model catalog currently exposes `kling_2_5_turbo` for prompt-driven image-to-video generation, not `kling_2_5_pro`.
-- The catalog also exposes `kling_2_6_motion` and `kling_3_motion`, but those are `source_motion` models, which the user explicitly does not want for this workflow.
-- Suggested update: document the exact public model id customers should use when they say Kling 2.5 Pro, or expose the expected `kling_2_5_pro` id if it exists internally.
-
-### Kling Turbo minimum duration mismatch
-
-- User asked for 2-3 second prompt-based clips.
-- Public model catalog for `kling_2_5_turbo` only allows `durationSeconds` values of `5` or `10`.
-- Suggested update: document the minimum available duration for each public video model, or expose shorter 2-3 second durations if supported internally.
-
 ### Video generation ledger stays processing after videos complete
 
 - User noticed videos were complete in the Ghostfeed UI while the agent was still polling.

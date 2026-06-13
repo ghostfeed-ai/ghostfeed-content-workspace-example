@@ -1,0 +1,67 @@
+# Knowledge Base Index
+
+- [GHK-Cu](ghk-cu.md) - peptide: A highly discussed copper peptide used for collagen production, skin repair, and hair growth, with specific mixing and injection protocols.
+- [Retatrutide (Reta)](retatrutide.md) - peptide: A core tri-agonist GLP-1/GIP/Glucagon peptide that serves as the foundation for weight loss, metabolism boosting, and appetite suppression in many stacks.
+- [Tesamorelin](tesamorelin.md) - peptide: A growth-hormone-releasing peptide primarily used for targeting visceral fat and improving body composition, requiring specific fasting protocols.
+- [CJC-1295](cjc-1295.md) - peptide: A growth hormone secretagogue often paired with Ipamorelin to improve muscle recovery and sleep.
+- [Ipamorelin](ipamorelin.md) - peptide: Frequently stacked with CJC-1295 to stimulate natural growth hormone pulses for recovery and body recomposition.
+- [MOTS-c](mots-c.md) - peptide: A mitochondrial-targeting peptide known as 'cardio in a bottle' that boosts energy, endurance, and metabolic efficiency.
+- [Kisspeptin](kisspeptin.md) - peptide: Used to stimulate the GnRH pathway to restore natural hormone signaling and libido.
+- [Melanotan 2 (MT2)](melanotan-2.md) - peptide: Increases melanin production for tanning, with notable side effects like nausea and flushing if dosed too high.
+- [IGF1-LR3](igf1-lr3.md) - peptide: A peptide that directly aids in muscle growth, nutrient partitioning, and performance support.
+- [Tirzepatide (Tirz)](tirzepatide.md) - peptide: A powerful appetite suppressant GLP-1/GIP receptor agonist frequently compared to or stacked with Retatrutide.
+- [Cagrilintide (Cag)](cagrilintide.md) - peptide: A peptide focusing heavily on strong fullness signaling to keep users satisfied throughout the day, sometimes stacked with Reta.
+- [BPC-157](bpc-157.md) - peptide: A recovery and healing peptide commonly found in cosmetic/recovery blends like Glow and Klow.
+- [TB-500](tb-500.md) - peptide: A healing and inflammation-reducing peptide included in the Glow and Klow blends.
+- [SS-31](ss-31.md) - peptide: A mitochondrial support peptide occasionally stacked with MOTS-c and NAD+ for energy efficiency.
+- [KPV](kpv.md) - peptide: A peptide used for reducing inflammation and improving overall digestive health.
+- [Glow Blend](glow-blend.md) - peptide: A specific blend of GHK-Cu, BPC-157, and TB-500 formulated for skin repair and physical recovery.
+- [Klow Blend](klow-blend.md) - peptide: A specific blend of KPV, GHK-Cu, BPC-157, and TB-500 targeting gut health, recovery, and skin.
+- [NAD+](nad-plus.md) - peptide: Used for cellular energy, ATP production, and recovery; frequently stacked with MOTS-c and Reta.
+- [Zinc](zinc.md) - supplement: A crucial supplement for balancing copper levels in the body to prevent 'copper uglies' while on GHK-Cu.
+- [Vitamin C](vitamin-c.md) - supplement: Necessary for utilizing GHK-Cu to successfully build collagen.
+- [Magnesium Bisglycinate](magnesium-bisglycinate.md) - supplement: Heavily recommended for improving sleep quality, calming the nervous system, and fighting Reta-induced insomnia.
+- [Electrolytes](electrolytes.md) - supplement: Essential on GLP-1s to prevent fatigue, headaches, and hangovers caused by reduced food and water intake.
+- [Digestive Enzymes](digestive-enzymes.md) - supplement: Used to combat bloating, fullness, and slowed digestion caused by medications like Retatrutide.
+- [PQQ](pqq.md) - supplement: Recommended alongside CoQ10 to build new mitochondria and restart progress when MOTS-c stalls.
+- [CoQ10](coq10.md) - supplement: Supports energy production and is used to troubleshoot a MOTS-c plateau.
+- [Creatine](creatine.md) - supplement: Aids in strength and recovery while on a calorie deficit, though it causes temporary water retention.
+- [Fish Oil (Omega-3)](fish-oil.md) - supplement: Improves insulin sensitivity and lowers systemic body inflammation.
+- [Psyllium Husk](psyllium-husk.md) - supplement: A fiber supplement recommended to fix loose stools or digestive irregularity on Retatrutide.
+- [Glycine](glycine.md) - supplement: Part of the nighttime sleep stack used to calm the nervous system when peptides cause restlessness.
+- [L-Theanine](l-theanine.md) - supplement: Reduces stress and promotes relaxation to counteract peptide-induced insomnia.
+- [Protein Powder](protein-powder.md) - supplement: Crucial for hitting the 0.8-1g per pound protein goal necessary to prevent muscle loss on weight-loss peptides.
+- [Hair Loss Supplements (Biotin & Collagen)](hair-loss-supplements.md) - supplement: Used alongside a multivitamin to counteract hair shedding triggered by rapid weight loss.
+- [Retatrutide + Tesamorelin Stack](reta-tesamorelin-stack.md) - stack: Known as the 'Skinny Fat Stack', attacking fat loss from two angles: appetite suppression (Reta) and targeted visceral fat burning (Tesa).
+- [Summer Shred Stack (Reta + Tesa + MOTS-c)](summer-shred-stack.md) - stack: A highly popular trifecta targeting calorie control, visceral fat loss, and metabolic output simultaneously.
+- [Retatrutide + MOTS-c Stack](reta-mots-c-stack.md) - stack: Combines Reta's appetite suppression with MOTS-c's mitochondrial endurance boost, often called 'cardio in a bottle'.
+- [GHK-Cu + Tesamorelin Stack](loose-skin-saver-stack.md) - stack: Pairs rapid visceral fat loss from Tesamorelin with GHK-Cu's collagen-boosting properties to prevent loose skin.
+- [Retatrutide + CJC/Ipamorelin Stack](reta-cjc-ipamorelin-stack.md) - stack: A body recomposition stack that ensures a calorie deficit while preserving muscle, sleep quality, and recovery.
+- [Live Till 100 Stack (NAD+ + GHK-Cu + MOTS-c)](live-till-100-stack.md) - stack: An anti-aging focused stack targeting cellular energy, metabolic efficiency, and tissue regeneration.
+- [Retatrutide + NAD+ Stack](reta-nad-stack.md) - stack: Counters the energy depletion of a strict Reta calorie deficit with the cellular energy boost of NAD+.
+- [Retatrutide + Tirzepatide Stack](reta-tirzepatide-stack.md) - stack: An aggressive protocol to double down on maximum appetite suppression.
+- [Retatrutide + Cagrilintide Stack](reta-cagrilintide-stack.md) - stack: Pairs Reta's metabolic boost with Cagrilintide's strong, long-lasting fullness signaling.
+- [Copper Uglies (GHK-Cu Breakouts)](copper-uglies.md) - side-effect: A common 1-2 week phase of acne and skin inflammation caused by GHK-Cu accelerating skin turnover.
+- [Injection Site Reactions](injection-site-reactions.md) - side-effect: Addresses stinging, welts, redness, and harmless blue skin dots associated with subcutaneous peptide injections (especially GHK-Cu).
+- [Constipation on GLP-1s](constipation.md) - side-effect: A frequent complication of slowed digestion and lowered food/water intake on Retatrutide, requiring specific hydration and fiber hacks.
+- [Anhedonia & Emotional Blunting](anhedonia-emotional-blunting.md) - side-effect: A psychological side effect of GLP-1s altering the brain's reward pathways, causing loss of interest in dating, socializing, or bad habits.
+- [Nausea & Slowed Gastric Emptying](nausea-gastric-emptying.md) - side-effect: Causes severe stomach discomfort, bloating, and sulfur burps when users eat heavy/greasy foods while on Retatrutide.
+- [Insomnia & Sleep Disruption](insomnia-sleep-disruption.md) - side-effect: Restlessness commonly triggered by the metabolic boost of Reta or the growth hormone pulse of Tesamorelin.
+- [Water Retention & Puffiness](water-retention-puffiness.md) - side-effect: An initial adjustment side effect of Tesamorelin drawing intracellular water into muscle tissue.
+- [Reta Face](reta-face.md) - side-effect: A hollow, depleted look caused by losing fat too quickly without proper nutrition or muscle retention.
+- [Hair Loss](hair-loss.md) - side-effect: A stress response triggered by rapid weight loss and severe calorie deficits on GLP-1s.
+- [Lipohypertrophy](lipohypertrophy.md) - side-effect: A buildup of scar tissue under the skin that blocks peptide absorption, caused by failing to rotate injection sites.
+- [Caffeine & Stimulant Sensitivity](caffeine-stimulant-sensitivity.md) - side-effect: Reta amplifies the effects of stimulants, causing severe anxiety, jitters, and elevated heart rate when mixed with pre-workouts or high caffeine.
+- [Retatrutide Diet Protocol](reta-diet-protocol.md) - routine: Outlines the critical necessity of high protein intake, whole foods, and avoiding greasy/fried foods to manage digestion and retain muscle.
+- [Retatrutide Cardio & Workout Routine](reta-workout-routine.md) - routine: Explains why low-intensity steady state (LISS) cardio and weightlifting are required, and why high-intensity (HIIT) causes burnout.
+- [Tesamorelin Fasting Protocol](tesamorelin-fasting-protocol.md) - routine: A strict 2-3 hour fasting window required around dosing to prevent insulin spikes from blunting growth hormone release.
+- [Drinking Alcohol on Peptides](alcohol-protocol.md) - routine: Important harm reduction regarding how GLP-1s delay intoxication, worsen hangovers, and demand specific hydration/pacing hacks.
+- [Bacteriostatic Water (BAC Water)](bacteriostatic-water.md) - injection-storage: The essential mixing agent for powdered peptides, complete with rules on a 28-30 day expiration window and visual spoilage signs.
+- [Reconstitution Math & Syringe Conversion](reconstitution-math.md) - injection-storage: A central guide to translating milligrams of peptide powder into milliliters of water and corresponding units on a syringe.
+- [Peptide Storage & Shelf Life](peptide-storage.md) - injection-storage: Crucial guidelines on keeping mixed vials refrigerated for 90 days, avoiding the fridge door, and preventing Tesa gelling.
+- [Subcutaneous Injection Technique](injection-technique.md) - injection-storage: Best practices for where to pin (stomach, thigh, glute) and how to avoid injection site reactions.
+- [Traveling with Peptides](traveling-with-peptides.md) - injection-storage: Logistics and gear needed to keep temperature-sensitive medications viable while flying or on the road.
+- [Pep AI App](pep-ai-app.md) - website-app-product: The primary digital tool heavily promoted by the creator for tracking dosages, macros, and cycle progress.
+- [PeptideCalc](peptidecalc.md) - website-app-product: An online calculator used to visually verify syringe measurements when reconstituting peptides.
+- [Travel Insulin Case](travel-insulin-case.md) - website-app-product: An Amazon product recommendation used for safely transporting cold peptide vials during travel.
+- [Ketoconazole Shampoo](ketoconazole-shampoo.md) - website-app-product: A topical product recommended to mitigate hair shedding alongside rapid weight loss.
